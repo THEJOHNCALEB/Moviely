@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MOVIELY | Experience movies like never before...</title>
+    <title>MOVIELY | Experience Movies Like Never Before...</title>
     <link rel="stylesheet" href="css/output.css"  />
 	<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
     <link rel="stylesheet" href="lib/bootstrap-icons/bootstrap-icons.css">
     <script src="js/main.js" defer></script>
@@ -14,9 +15,8 @@
 <body class="bg-slate-900 text-white min-h-screen">
     <header class="bg-transparent filter-normal sticky top-0 z-10">
         <section id="navbar" class="max-w-5xl mx-auto p-4 flex justify-between items-center">
-            <div title="MOVIELY" class="flex cursor-pointer flex-row items-center">
-                <img src="image/favicon-32x32.png" alt="pop">
-                <h1 class="text-3xl capitalize font-bold font-serif">MOVIELY</h1>
+            <div title="MOVIELY" class="flex cursor-pointer flex-row items-stretch">
+                <img width="64" src="image/favicon.ico" alt="MOVIELY"/>
             </div>
             <nav class="navs hidden sm:block text-xl space-x-8">
                     <a class="transition-all hover:text-pink-200" href="#popular-movies">Popular</a>
@@ -27,7 +27,7 @@
                     <a title="Search Movies" id="searchbtn">
                         <i class="bi bi-search"></i>
                     </a>
-                    <a title="Github" href="https://github.com/Johnocaleb/Moviely">
+                    <a title="Star on Github" href="https://github.com/Johnocaleb/Moviely">
                         <i class="bi bi-github"></i>
                     </a>
                 </div>
@@ -42,14 +42,15 @@
                 <a id="closeMobileOverlay" href="#">
                     <i class="bi bi-x-lg"></i>
                 </a>
+                <img width="64" src="image/favicon.ico" alt="pop">
                 <a  id="searchBtnMobile" href="#">
                     <i class="bi bi-search"></i>
                 </a>
             </div>
             <nav class="navs text-5xl text-center font-bold font-mono flex py-10 max-w-7xl flex-col">
-                <a class="transition-all hover:text-pink-200 m-5 p-4 border-2 border- border-double border-red-300" href="#popular-movies">Popular</a>
-                <a class="transition-all hover:text-pink-200 m-5 p-4 border-2 border- border-double border-red-300" href="#top-rated">Top-Rated</a>
-                <a class="transition-all hover:text-pink-200 m-5 p-4 border-2 border- border-double border-red-300" href="#trending">Trending</a>
+                <a class="transition-all hover:text-pink-200 m-5 p-4 border-2 border-double border-red-300" href="#popular-movies">Popular</a>
+                <a class="transition-all hover:text-pink-200 m-5 p-4 border-2 border-double border-red-300" href="#top-rated">Top-Rated</a>
+                <a class="transition-all hover:text-pink-200 m-5 p-4 border-2 border-double border-red-300" href="#trending">Trending</a>
             </nav>
             <div class="text-5xl cursor-pointer flex flex-row-reverse justify-center">
                 <a href="https://github.com/Johnocaleb/Moviely">
@@ -58,20 +59,21 @@
             </div>
         </div>
     </div>
-    <div id="search-overlay" class="search-overlay scrool-mt-20 hidden fixed top-0 h-screen w-full bottom-0 filter-blur z-10">
+    <div id="search-overlay" class="search-overlay hidden fixed top-0 h-screen w-full bottom-0 filter-blur z-10">
         <div class="max-w-6xl mx-auto p-4">
-            <a id="closeSearchBtn" class="text-5xl flex flex-row justify-between cursor-pointer hover:text-slate-100 text-rose-200">
+            <a id="closeSearchBtn" class="text-4xl flex flex-row justify-between cursor-pointer hover:text-slate-100 text-rose-200">
                 <i class="bi bi-arrow-left"></i>
+                <img width="54" src="image/favicon.ico" alt="pop">
                 <i class="bi bi-x-lg"></i>
             </a>
             <div class="grid justify-center">
                 <div class="section-header mb-4 mt-3 text-center">
                     <h1 class="text-rose-700 capitalize text-5xl font-mono font-extrabold">Search</h1>
                 </div>
-                <form id="form" class="search">
+                <div class="search">
                     <input type="search" name="search" id="search" placeholder="Search Movie Title..." class="bg-transparent outline-none p-4 px-9">
                     <i class="bi hover:text-rose-200 text-2xl bi-search"></i>
-                </form>
+                </div>
             </div>
             <section class="search-result max-w-6xl p-10>">
                 <div class="container">
@@ -85,21 +87,66 @@
             </section>
         </div>
     </div>
+    </div>
+    <div id="single-overlay" class="search-overlay hidden fixed top-0 h-screen w-full bottom-0 filter-blur z-10">
+        <div class="max-w-6xl mx-auto p-4">
+            <a id="closeSingleMovie" class="text-4xl flex flex-row justify-between cursor-pointer hover:text-slate-100 text-rose-200">
+                <i class="bi bi-arrow-left"></i>
+                <img width="54" src="image/favicon.ico" alt="pop">
+            </a>
+            <div class="grid justify-center text-2xl sm-text-4xl text-sky-400 font-black">
+                <a id="singleMovieWebsite">Visit Movie Site <i class="bi bi-box-arrow-up-right"></i></a>
+            </div>
+            <div class="filter-normal p-2 rounded-xl">            
+                <div id="singleMovieOverview" class="grid h-auto justify-center filter-blursm m-1" style="background-size: contain;">
+                <div class="section-header mb-4 mt-3 p-2 text-center">
+                    <h1 id="movieOverview" class="text-white text-5xl font-mono font-extrabold"></h1>
+                </div>
+            </div>
+            <div id="singleMoviePoster" class="moviestats h-max bg-contain">
+                <div id="SingleMovieImage" class="flex filter-bright sm:flex-row-reverse flex-col items-start justify-between">
+                    <div class="h-full w-full m-1">
+                        <p class="text-3xl sm:text-6xl p-2 filter-blur h-max w-full text-center font-light font-sans text-violet-200">
+                            <i class="bi bi-quote text-3xl"></i><br>
+                            <span style="letter-spacing: 8px;" class="text-lg mt-2 text-center italic font-thin" id="singleMovieTagline"></span><br>
+                            <i class="bi bi-quote text-3xl"></i>
+                        </p>
+                        <div class="grid justify-center filter-normal py-3">
+                            <span id="singleMovieRating" class="text-9xl font-extrabold font-serif"></span>
+                        </div>
+                        
+                        <p class="text-3xl sm:text-6xl p-2 filter-blur h-max w-full text-center font-light font-sans text-violet-200">
+                            <i class="bi bi-quote text-3xl"></i><br>
+                            <span id="singleMovieFullOverview"></span><br>
+                            <i class="bi bi-quote text-3xl"></i>
+                        </p>
+                        <div style="letter-spacing: 8px;" class="flex text-2xl font-extrabold filter-normal flex-row flex-wrap justify-evenly space-y-5">
+                            <span id="singleMovieStatus" class="rounded-lg p-2 m-2 text-white"></span>
+                            <span id="singleMovieReleaseDate" class="rounded-lg  m-2 p-2 text-white"></span>
+                            <span class="rounded-lg p-2 m-2 text-white">BUDGET: <span id="singleMovieBudget"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
     <section id="hero" class="hero flex flex-col sm:flex-row-reverse justify-around items-center">
         <div class="image h-1/2 sm:h-full sm:w-1/2 w-full">
             <img src="image/fox.jpg" alt="Moviely" title="MOVIELY" />
         </div>
         <div class="sm:w-1/2 w-full filter-normal p-3 px-6">
             <h1 class="herotext sm:text-8xl text-6xl text-rose-600">
-                Expe<span class="text-rose-300">rienc</span>e mov<span class="text-rose-300">ies <br>like ne</span>ver before<span class="text-rose-300 text-7xl">.</span>.<span class="text-rose-300  text-7xl">.</span>
+                Expe<span class="text-rose-300">rienc</span>e Mov<span class="text-rose-300">ies <br>Like Ne</span>ver Before<span class="text-rose-300 text-7xl">.</span>.<span class="text-rose-300 text-7xl">.</span>
             </h1>
         </div>
     </section>
     <div class="h-20 scroll-mb-8 w-full filter-lg"></div>
     <section id="popular-movies" class="top-rated scroll-my-10 w-full p-10">
         <div class="">
-            <div class="section-header mb-4 mt-3">
-                <h1 class="text-rose-700 capitalize text-3xl sm:text-5xl font-mono font-extrabold">Popular:</h1>
+            <div class="section-header mb-4 mt-3 grid justify-center">
+                <h1 class="text-rose-700 text-center capitalize text-3xl sm:text-5xl font-mono font-extrabold">Popular</h1>
+                <div style="border-bottom: 1px double #d34a5a; width: 68%; padding: 8px;"></div>
             </div>
             <div class="popular-movies relative p-3">
                 <div id="popularMovieCover" class="movie-cover"></div>
@@ -108,8 +155,9 @@
     </section>
     <section id="top-rated" class="top-rated scroll-my-10 w-full p-10">
         <div>
-            <div class="section-header mb-4 mt-3">
-                <h1 class="text-rose-700 capitalize text-3xl sm:text-5xl font-mono font-extrabold">Top-Rated:</h1>
+            <div class="section-header mb-4 mt-3 grid justify-center">
+                <h1 class="text-rose-700 capitalize text-3xl sm:text-5xl font-mono font-extrabold">Top-Rated</h1>
+                <div style="border-bottom: 1px double #d34a5a; width: 68%; padding: 8px;"></div>
             </div>
             <div class="top-rated-movies relative p-3">
                 <div id="topMovieCover" class="movie-cover"></div>
@@ -118,8 +166,9 @@
     </section>
     <section id="trending" class="top-rated scroll-my-10 w-full p-10">
         <div>
-            <div class="section-header mb-4 mt-3">
-                <h1 class="text-rose-700 capitalize text-3xl sm:text-5xl font-mono font-extrabold">Trending:</h1>
+            <div class="section-header mb-4 mt-3 grid justify-center">
+                <h1 class="text-rose-700 capitalize text-center text-3xl sm:text-5xl font-mono font-extrabold">Trending</h1>
+                <div style="border-bottom: 1px double #d34a5a; width: 68%; padding: 8px;"></div>
             </div>
             <div class="topMovieCurrentYear relative p-3">
                 <div id="topMovieCurrentYearCover" class="movie-cover"></div>
@@ -130,11 +179,10 @@
         <footer>
             <div class="container flex flex-col sm:flex-row justify-around font-mono items-start mb-9 sm:items-center">
                 <div class="items-center">
-                    <div title="MOVIELY" class="flex flex-row items-start sm:items-center sm:justify-center justify-start">
-                        <img src="image/favicon-32x32.png" alt="pop">
-                        <h1 class="text-3xl capitalize font-bold font-serif">MOVIELY</h1>
+                    <div title="MOVIELY" class="flex flex-row items-start sm:items-center justify-center">
+                        <img width="64" src="image/favicon.ico" alt="MOVIELY">
                     </div>
-                    <p>Experience movies like never before...</p>
+                    <p>Experience Movies Like Never Before...</p>
                 </div>
                 <div>
                     <div class="section-header mb-5 mt-4">
@@ -148,7 +196,7 @@
                     </div>
                 </div>
                 <div>
-                    <div title="Github" class="section-header flex flex-row justify-center mb-4 mt-3">
+                    <div title="Star on Github" class="section-header grid justify-self-center mb-4 mt-3">
                         <a href="https://github.com/Johnocaleb/Moviely" class="text-rose-700 text-5xl"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
