@@ -13,6 +13,8 @@
 ### Screenshot
 
 ![Preview Image](/image/screenshot.png)
+![Preview Image](/image/screenshot1.png)
+![Preview Image](/image/screenshot2.png)
 
 ### Guide
 

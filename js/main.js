@@ -65,6 +65,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
             singlelay.classList.add("hidden");
             body.classList.remove("overflow-none");
             document.querySelector("#singleMovieGenres").innerHTML = " ";
+            document.querySelector("#movieProductionCompanies").innerHTML = " ";
         }
     }
     function tooglemobilemenu() {
@@ -181,6 +182,12 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
             const movieGenres = document.createElement('span')
             movieGenres.textContent = genre.name;
             document.querySelector("#singleMovieGenres").appendChild(movieGenres)
+        })
+        movies.production_companies.forEach((production_company) => {
+            const movieCompanyImg = document.createElement('img')
+            movieCompanyImg.classList.add('singleCompanyImg', 'h-20');
+            movieCompanyImg.src = IMG_PATH+production_company.logo_path;
+            document.querySelector("#movieProductionCompanies").appendChild(movieCompanyImg)
         })
         document.querySelector("#movieOverview").textContent = movies.original_title.toUpperCase();
         document.querySelector("#singleMovieFullOverview").textContent = movies.overview;
