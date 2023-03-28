@@ -800,6 +800,10 @@ video {
   background-size: contain;
 }
 
+.bg-center {
+  background-position: center;
+}
+
 .p-10 {
   padding: 2.5rem;
 }
@@ -886,8 +890,8 @@ video {
   line-height: 1;
 }
 
-.text-8xl {
-  font-size: 6rem;
+.text-9xl {
+  font-size: 8rem;
   line-height: 1;
 }
 
@@ -899,11 +903,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
 }
 
 .font-black {
@@ -924,6 +923,10 @@ video {
 
 .font-light {
   font-weight: 300;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .font-thin {
@@ -1004,8 +1007,8 @@ video {
           backdrop-filter: blur(44px);
 }
 
-.filter-blursm{
-  filter: saturate(0.5);
+.filter-opacity{
+  filter: opacity(0.7);
 }
 
 .filter-lg{

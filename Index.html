@@ -98,33 +98,35 @@
             <div class="grid justify-center text-2xl sm-text-4xl text-sky-400 font-black">
                 <a id="singleMovieWebsite">Visit Movie Site <i class="bi bi-box-arrow-up-right"></i></a>
             </div>
-            <div class="filter-normal p-2 rounded-xl">            
-                <div id="singleMovieOverview" class="grid h-auto justify-center filter-blursm m-1" style="background-size: contain;">
+            <div class="p-2 rounded-xl">            
+                <div id="singleMovieOverview" class="grid h-auto justify-center bg-center bg-contain filter-opacity m-1">
                 <div class="section-header mb-4 mt-3 p-2 text-center">
                     <h1 id="movieOverview" class="text-white text-5xl font-mono font-extrabold"></h1>
                 </div>
             </div>
-            <div id="singleMoviePoster" class="moviestats h-max bg-contain">
+            <div id="singleMoviePoster" class="moviestats h-max bg-contain bg-center">
                 <div id="SingleMovieImage" class="flex filter-bright sm:flex-row-reverse flex-col items-start justify-between">
-                    <div class="h-full w-full m-1">
+                    <div class="h-full w-full">
+                        <div id="singleMovieGenres" style="letter-spacing: 7px;" class="p-3 font-semibold font-sans text-rose-400 filter-normal flex flex-row flex-wrap justify-around">
+                        </div>
                         <p class="text-3xl sm:text-6xl p-2 filter-blur h-max w-full text-center font-light font-sans text-violet-200">
                             <i class="bi bi-quote text-3xl"></i><br>
                             <span style="letter-spacing: 8px;" class="text-lg mt-2 text-center italic font-thin" id="singleMovieTagline"></span><br>
                             <i class="bi bi-quote text-3xl"></i>
                         </p>
-                        <div class="grid justify-center filter-normal py-3">
-                            <span id="singleMovieRating" class="text-9xl font-extrabold font-serif"></span>
+                        <div class="grid justify-center filter-normal py-3 text-9xl font-extrabold font-serif">
+                            <span id="singleMovieRating" class=""></span>
                         </div>
-                        
                         <p class="text-3xl sm:text-6xl p-2 filter-blur h-max w-full text-center font-light font-sans text-violet-200">
                             <i class="bi bi-quote text-3xl"></i><br>
                             <span id="singleMovieFullOverview"></span><br>
                             <i class="bi bi-quote text-3xl"></i>
                         </p>
                         <div style="letter-spacing: 8px;" class="flex text-2xl font-extrabold filter-normal flex-row flex-wrap justify-evenly space-y-5">
+                            <span></span>
                             <span id="singleMovieStatus" class="rounded-lg p-2 m-2 text-white"></span>
                             <span id="singleMovieReleaseDate" class="rounded-lg  m-2 p-2 text-white"></span>
-                            <span class="rounded-lg p-2 m-2 text-white">BUDGET: <span id="singleMovieBudget"></span></span>
+                            <span class="rounded-lg p-2 m-2 text-white">BUDGET: $<span id="singleMovieBudget"></span></span>
                         </div>
                     </div>
                 </div>
@@ -188,7 +190,6 @@
                 <div>
                     <div class="section-header mb-5 mt-4">
                         <h1 class="text-rose-700 capitalize text-2xl font-mono font-extrabold">Quick Links:</h1>
-
                         <div class="mt-2 flex flex-row font-mono justify-around"> 
                             <a href="#popular-movies" class="border-rose-900 border m-2 p-2">Popular</a>
                             <a href="#top-rated" class="border-rose-900 border m-2 p-2">Top-Rated</a>
