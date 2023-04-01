@@ -42,6 +42,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
         else {
             moviecontainer.innerHTML = ''
             searchresultheader.textContent = "";
+            document.querySelector("#searchResultInfo").textContent = "";
         }
     })
     function toogleoverlay() {
@@ -85,6 +86,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
     function showMovies(movies) {
         moviecontainer.innerHTML = ''
         searchresultheader.textContent = "Search Results:";
+        document.querySelector("#searchResultInfo").textContent = "click on a movie to view full movie info.";
         movies.forEach((movie) => {
             const { title, id, poster_path, vote_average, overview } = movie
             const movieEl = document.createElement('div')
@@ -189,15 +191,16 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
             movieCompanyImg.src = IMG_PATH+production_company.logo_path;
             document.querySelector("#movieProductionCompanies").appendChild(movieCompanyImg)
         })
+        let movieAverage = Math.round(movies.vote_average);
         document.querySelector("#movieOverview").textContent = movies.original_title.toUpperCase();
         document.querySelector("#singleMovieFullOverview").textContent = movies.overview;
         document.querySelector("#singleMovieTagline").textContent = movies.tagline.toUpperCase();
         document.querySelector("#singleMovieWebsite").href = movies.homepage;
         document.querySelector("#singleMovieReleaseDate").textContent = movies.release_date;
         document.querySelector("#singleMovieBudget").textContent = movies.budget;
-        document.querySelector("#singleMovieRating").textContent = Math.round(movies.vote_average);
+        document.querySelector("#singleMovieRating").textContent = movieAverage;
         document.querySelector("#singleMovieRating").className = "";
-        document.querySelector("#singleMovieRating").classList.add(getClassByRate(movies.vote_average));
+        document.querySelector("#singleMovieRating").classList.add(getClassByRate(movieAverage));
         document.querySelector("#singleMovieStatus").textContent = movies.status.toUpperCase();
         document.querySelector("#singleMovieOverview").style.backgroundImage = "url("+IMG_PATH + movies.backdrop_path+")";
         document.querySelector("#singleMoviePoster").style.backgroundImage = "url("+IMG_PATH + movies.poster_path+")";
