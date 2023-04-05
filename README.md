@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
   - [Screenshot](#screenshot)
-  - [Quick Guides](#Guide)
+  - [Quick Guides](#Guides)
   - [Links](#links)
   - [Author](#author)
 
@@ -16,7 +16,7 @@
 ![Preview Image](/image/screenshot1.png)
 ![Preview Image](/image/screenshot2.png)
 
-### Guide
+### Guides
 
 - Search by clicking the search button on the menu bar.
 - Click on a movie to see more about the it.
