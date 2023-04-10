@@ -84,7 +84,8 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
         showMovies(data.results)
     }
     function showMovies(movies) {
-        moviecontainer.innerHTML = ''
+        try {
+            moviecontainer.innerHTML = ''
         searchresultheader.textContent = "Search Results:";
         document.querySelector("#searchResultInfo").textContent = "click on a movie to view full movie info.";
         movies.forEach((movie) => {
@@ -100,8 +101,12 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
                 </div>
             </div>
             `
-            moviecontainer.appendChild(movieEl)
+            moviecontainer.appendChild(movieEl) 
         })
+        } catch (error) {
+            //do nothing
+        }
+       
     }
     async function getPopularMovies(url) {
         const res = await fetch(url)
@@ -109,6 +114,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
         showPopularMovies(data.results)
     }
     function showPopularMovies(movies) {
+        try{
         popularMovieCover.innerHTML = ''
         movies.forEach((movie) => {
             const { title, id, poster_path, vote_average, overview } = movie
@@ -125,6 +131,9 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
             `
             popularMovieCover.appendChild(movieEl)
         })
+    } catch (error) {
+        //do nothing
+    }
     }
     async function getTopMovies(url) {
         const res = await fetch(url)
@@ -132,6 +141,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
         showTopMovies(data.results)
     }
     function showTopMovies(movies) {
+        try{
         topMovieCover.innerHTML = ''
         movies.forEach((movie) => {
             const { title, id, poster_path, vote_average, overview } = movie
@@ -150,6 +160,9 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
             `
             topMovieCover.appendChild(movieEl)
         })
+    } catch (error) {
+        //do nothing
+    }
     }
     async function getTopMoviesOfCurrentYear(url) {
         const res = await fetch(url)
@@ -157,6 +170,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
         showTopMoviesOfCurrentYear(data.results)
     }
     function showTopMoviesOfCurrentYear(movies) {
+        try{
         topMovieCurrentYearCover.innerHTML = ''
         movies.forEach((movie) => {
             const { title, id, poster_path, vote_average, overview } = movie
@@ -173,6 +187,9 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
             `
             topMovieCurrentYearCover.appendChild(movieEl)
         })
+    } catch (error) {
+        //do nothing
+    }
     }
     async function getSingleMovie(url) {
         const res = await fetch(SINGLE_API_URL_FIRST+url+API_KEY)
@@ -180,6 +197,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
         showSingleMovie(data);
     }
     function showSingleMovie(movies) {
+        try{
         movies.genres.forEach((genre) => {
             const movieGenres = document.createElement('span')
             movieGenres.textContent = genre.name;
@@ -205,6 +223,9 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
         document.querySelector("#singleMovieOverview").style.backgroundImage = "url("+IMG_PATH + movies.backdrop_path+")";
         document.querySelector("#singleMoviePoster").style.backgroundImage = "url("+IMG_PATH + movies.poster_path+")";
         toogleSingleView()
+    } catch (error) {
+        //do nothing
+    }
     }
     function getClassByRate(vote) {
         if(vote >= 8) {
