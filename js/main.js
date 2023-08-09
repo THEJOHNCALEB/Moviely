@@ -94,9 +94,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
             movieEl.classList.add('movie')
             movieEl.innerHTML = `
             <div onclick="getSingleMovie(`+id+`)">
-                <img src="${if (IMG_PATH + poster_path == "https://image.tmdb.org/t/p/w1280null"){
-                     return "https://via.placeholder.com/400"
-                }else {return "IMG_PATH + poster_path"}}" alt="${title}">
+                <img src="${IMG_PATH + poster_path}" alt="${title}">
                 <div class="movie-info">
             <h3>${title}</h3>
             <span class="${getClassByRate(vote_average)}">${vote_average}</span>
