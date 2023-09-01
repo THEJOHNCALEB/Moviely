@@ -1,6 +1,11 @@
-# MOVIELY 
-
-## Table of contents
+<div align="center">
+   <h1>MOVIELY 🍿</h1>
+	<p>Get informations about a movie, search for a movie, view high rated, trending and most popular movies, e.t.c. Even before it's released 🎥</p>
+   <p align="center">
+     <a href="https://moviely.netlify.app">CLICK HERE TO VIEW PROJECT 🍿</a>
+  </p>
+</div>
+ <h2>Table of contents</h2>
 
 - [Overview](#overview)
   - [Screenshot](#screenshot)
